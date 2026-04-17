@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Blindspot</title>
+  <meta name="description" content="Explore Blindspot's service packages. From starter social management to full-scale growth retainers, or build your own bespoke package.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mascot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Blindspot home">
+      <span class="brand-logo-stack" aria-hidden="true">
+        <img src="logo-dark.svg" alt="" class="brand-logo-image logo-dark">
+        <img src="logo-light.svg" alt="" class="brand-logo-image logo-light">
+      </span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="work.html" class="nav-link">Our Work</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" aria-label="Toggle theme"></button>
+      <button class="btn-book" data-modal="book">Book a Call</button>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-overlay"></div>
+  <div class="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <button class="mobile-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="work.html" class="nav-link">Our Work</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+    </ul>
+    <button class="btn-primary mobile-book-btn" data-modal="book">Book a Call</button>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1 class="page-hero-heading fade-up">What we offer.</h1>
+      <p class="page-hero-subtext fade-up" data-delay="1">Whether you are just starting out or ready to scale, there is a Blindspot package built for where you are right now.</p>
+    </div>
+  </section>
+
+  <!-- Build Your Own Section -->
+  <section class="section builder-section">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 class="section-heading fade-up">Build your own package.</h2>
+      <p class="section-subtext fade-up" data-delay="1">Build your own package — drag the services you want into your package and we will put together a bespoke quote.</p>
+
+      <div class="builder-grid">
+
+        <!-- Left: Available services -->
+        <div class="builder-col">
+          <h3 class="builder-column-heading">Available Services <span style="font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;opacity:0.55;margin-left:0.4rem;">Click to add</span></h3>
+
+          <div class="categories-grid">
+
+            <div class="service-category">
+              <p class="category-label">Content and Social</p>
+              <div class="service-chips">
+                <span class="service-chip" draggable="true" data-service="Instagram Management">Instagram Management</span>
+                <span class="service-chip" draggable="true" data-service="LinkedIn Management">LinkedIn Management</span>
+                <span class="service-chip" draggable="true" data-service="TikTok Management">TikTok Management</span>
+                <span class="service-chip" draggable="true" data-service="Facebook Management">Facebook Management</span>
+                <span class="service-chip" draggable="true" data-service="Pinterest Management">Pinterest Management</span>
+                <span class="service-chip" draggable="true" data-service="Short-Form Video Production">Short-Form Video Production</span>
+                <span class="service-chip" draggable="true" data-service="Long Form Video Production">Long Form Video Production</span>
+                <span class="service-chip" draggable="true" data-service="Static Graphic Design">Static Graphic Design</span>
+                <span class="service-chip" draggable="true" data-service="UGC Campaign Coordination">UGC Campaign Coordination</span>
+                <span class="service-chip" draggable="true" data-service="Caption Copywriting">Caption Copywriting</span>
+              </div>
+            </div>
+
+            <div class="service-category">
+              <p class="category-label">SEO and Web</p>
+              <div class="service-chips">
+                <span class="service-chip" draggable="true" data-service="Google SEO">Google SEO</span>
+                <span class="service-chip" draggable="true" data-service="AI Search Optimisation">AI Search Optimisation</span>
+                <span class="service-chip" draggable="true" data-service="Google Business Profile Management">Google Business Profile Management</span>
+                <span class="service-chip" draggable="true" data-service="Blog Content Writing">Blog Content Writing</span>
+                <span class="service-chip" draggable="true" data-service="Website Audit and Recommendations">Website Audit and Recommendations</span>
+                <span class="service-chip" draggable="true" data-service="Website Development">Website Development</span>
+              </div>
+            </div>
+
+            <div class="service-category">
+              <p class="category-label">Paid Advertising</p>
+              <div class="service-chips">
+                <span class="service-chip" draggable="true" data-service="Meta Ads Management">Meta Ads Management</span>
+                <span class="service-chip" draggable="true" data-service="Ad Creative Production">Ad Creative Production</span>
+              </div>
+            </div>
+
+            <div class="service-category">
+              <p class="category-label">Strategy and Reporting</p>
+              <div class="service-chips">
+                <span class="service-chip" draggable="true" data-service="Monthly Performance Report">Monthly Performance Report</span>
+                <span class="service-chip" draggable="true" data-service="Bi-weekly Strategy Call">Bi-weekly Strategy Call</span>
+                <span class="service-chip" draggable="true" data-service="Weekly Strategy Call">Weekly Strategy Call</span>
+                <span class="service-chip" draggable="true" data-service="Competitor Analysis">Competitor Analysis</span>
+                <span class="service-chip" draggable="true" data-service="Brand Audit">Brand Audit</span>
+                <span class="service-chip" draggable="true" data-service="Reddit Growth Strategy">Reddit Growth Strategy</span>
+                <span class="service-chip" draggable="true" data-service="Pinterest Growth Strategy">Pinterest Growth Strategy</span>
+              </div>
+            </div>
+
+          </div><!-- /categories-grid -->
+        </div>
+
+        <!-- Right: Drop zone -->
+        <div class="builder-col">
+          <h3 class="builder-column-heading">Your Package</h3>
+          <div class="package-counter">
+            <span class="package-count-label" id="package-count-label">Nothing added yet</span>
+          </div>
+          <div class="drop-zone" id="drop-zone">
+            <div class="drop-zone-hint" id="drop-hint">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <circle cx="18" cy="14" r="7"/>
+                <path d="M11 28c0-3.87 3.13-7 7-7s7 3.13 7 7"/>
+                <line x1="18" y1="3" x2="18" y2="7"/>
+                <line x1="18" y1="21" x2="18" y2="25"/>
+                <line x1="3" y1="14" x2="7" y2="14"/>
+                <line x1="29" y1="14" x2="33" y2="14"/>
+              </svg>
+              <span>Drag services across to start building your package.</span>
+              <span style="font-size:0.75rem;opacity:0.6;">On mobile, tap a service to add it.</span>
+            </div>
+            <div class="selected-chips-container" id="selected-chips"></div>
+          </div>
+          <button class="btn-primary" id="get-quote-btn" style="margin-top:1.5rem;width:100%;">
+            I am done - get my quote
+            <span class="quote-count-badge" id="quote-count-badge">0</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Don't know where to start -->
+  <section class="section" style="padding-top:0;">
+    <div style="max-width:900px;margin:0 auto;text-align:center;padding:3rem;background:var(--surface);border-radius:1rem;">
+      <h2 class="section-heading fade-up" style="margin-bottom:1rem;">Don't know where to start?</h2>
+      <p style="color:var(--text-muted);margin-bottom:2rem;" class="fade-up" data-delay="1">Book a call with us now and we will build the right package together.</p>
+      <button class="btn-primary fade-up" data-delay="2" data-modal="book">Book a Call</button>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section class="section">
+    <h2 class="section-heading fade-up" style="text-align:center;margin-bottom:3rem;">Our packages.</h2>
+    <div class="pricing-grid">
+
+      <!-- Foundation -->
+      <div class="pricing-card fade-up">
+        <h3 class="pricing-tier">Foundation</h3>
+        <p class="pricing-best-for">For businesses getting started with social media and looking to build a consistent, professional presence.</p>
+        <ul class="pricing-features">
+          <li>3 static posts per week (1 platform)</li>
+          <li>Content calendar and scheduling</li>
+          <li>Caption copywriting</li>
+          <li>Monthly strategy check-in</li>
+          <li>Monthly analytics report</li>
+          <li>Email support</li>
+        </ul>
+        <button class="btn-outline" data-modal="book">Get started</button>
+      </div>
+
+      <!-- Growth - Featured -->
+      <div class="pricing-card featured fade-up" data-delay="1">
+        <span class="pricing-badge">Most Popular</span>
+        <h3 class="pricing-tier">Growth</h3>
+        <p class="pricing-best-for">For growing brands ready to scale their reach and start seeing real, measurable results.</p>
+        <ul class="pricing-features">
+          <li>20 pieces of content per month across 2 platforms</li>
+          <li>Short-form video content</li>
+          <li>Full caption and hashtag strategy</li>
+          <li>SEO and LLM visibility</li>
+          <li>Community management and engagement</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Monthly analytics report</li>
+          <li>Priority email support</li>
+        </ul>
+        <button class="btn-primary" data-modal="book">Get started</button>
+      </div>
+
+      <!-- Scale -->
+      <div class="pricing-card fade-up" data-delay="2">
+        <h3 class="pricing-tier">Scale</h3>
+        <p class="pricing-best-for">For ambitious businesses that want a full-service marketing partner driving growth across every channel.</p>
+        <ul class="pricing-features">
+          <li>30+ pieces of content across 3 platforms</li>
+          <li>Full content production suite</li>
+          <li>UGC campaign strategy</li>
+          <li>Meta ad strategy and management</li>
+          <li>SEO and LLM visibility</li>
+          <li>Weekly strategy sessions</li>
+          <li>Comprehensive monthly reporting with competitor analysis</li>
+          <li>Priority direct access to the founding team</li>
+        </ul>
+        <button class="btn-outline" data-modal="book">Get started</button>
+      </div>
+
+    </div>
+    <p class="pricing-note fade-up">Still unsure? Book a call with us now and we will build the right package together.</p>
+  </section>
+
+  <!-- Footer CTA -->
+  <section class="footer-cta">
+    <h2 class="fade-up" style="font-family:Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.5rem;">Ready to fix your blindspot?</h2>
+    <button class="btn-primary fade-up" data-delay="1" data-modal="book">Book a Call</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo footer-logo" aria-label="Blindspot home">
+          <span class="brand-logo-stack" aria-hidden="true">
+            <img src="logo-dark.svg" alt="" class="brand-logo-image logo-dark">
+            <img src="logo-light.svg" alt="" class="brand-logo-image logo-light">
+          </span>
+        </a>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:hello@blindspot.agency" class="footer-email">hello@blindspot.agency</a>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/theblindspotagency" target="_blank" rel="noopener noreferrer" aria-label="Blindspot on Instagram" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/blindspotagency" target="_blank" rel="noopener noreferrer" aria-label="Blindspot on LinkedIn" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="3"/>
+              <line x1="8" y1="10" x2="8" y2="17"/>
+              <line x1="12" y1="13" x2="12" y2="17"/>
+              <line x1="12" y1="10" x2="12" y2="10.5"/>
+              <line x1="16" y1="8" x2="16" y2="17"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61580712877141" target="_blank" rel="noopener noreferrer" aria-label="Blindspot on Facebook" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Blindspot. All rights reserved.</span>
+      <div class="footer-meta-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Book a Call Modal -->
+  <div class="modal-overlay" id="modal-book" role="dialog" aria-modal="true" aria-labelledby="modal-book-heading">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <line x1="15" y1="5" x2="5" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="5" y1="5" x2="15" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div id="success-book" class="form-success">
+        <p>We have got your details. Expect to hear from us soon.</p>
+      </div>
+      <form id="form-book" novalidate>
+        <h2 class="modal-heading" id="modal-book-heading">Let's talk.</h2>
+        <p class="modal-subtext">Tell us a little about yourself and we will be in touch to arrange a call.</p>
+        <div class="form-group">
+          <label for="book-name">Full name</label>
+          <input type="text" id="book-name" name="fullName" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="book-email">Email address</label>
+          <input type="email" id="book-email" name="email" required placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label for="book-business">Business name</label>
+          <input type="text" id="book-business" name="businessName" required placeholder="Your business">
+        </div>
+        <div class="form-group">
+          <label for="book-industry">Industry</label>
+          <select id="book-industry" name="industry" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option>Food and Beverage</option>
+            <option>Retail</option>
+            <option>Professional Services</option>
+            <option>Health and Wellness</option>
+            <option>Technology</option>
+            <option>Hospitality</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="book-services">Selected services</label>
+          <select id="book-services" name="selectedServices">
+            <option value="" selected>No specific service yet</option>
+            <option>Instagram Management</option>
+            <option>LinkedIn Management</option>
+            <option>TikTok Management</option>
+            <option>Facebook Management</option>
+            <option>Pinterest Management</option>
+            <option>Short-Form Video Production</option>
+            <option>Long Form Video Production</option>
+            <option>Static Graphic Design</option>
+            <option>UGC Campaign Coordination</option>
+            <option>Caption Copywriting</option>
+            <option>Google SEO</option>
+            <option>AI Search Optimisation</option>
+            <option>Google Business Profile Management</option>
+            <option>Blog Content Writing</option>
+            <option>Website Audit and Recommendations</option>
+            <option>Website Development</option>
+            <option>Meta Ads Management</option>
+            <option>Ad Creative Production</option>
+            <option>Monthly Performance Report</option>
+            <option>Bi-weekly Strategy Call</option>
+            <option>Weekly Strategy Call</option>
+            <option>Competitor Analysis</option>
+            <option>Brand Audit</option>
+            <option>Reddit Growth Strategy</option>
+            <option>Pinterest Growth Strategy</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="book-notes">Anything you'd like us to know?</label>
+          <textarea id="book-notes" name="notes" placeholder="Tell us about your goals, challenges, or anything else on your mind..."></textarea>
+        </div>
+        <div class="form-consent">
+          <input type="checkbox" id="book-consent" name="policyAcknowledged" value="yes" required>
+          <label for="book-consent">I have read the <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a>.</label>
+        </div>
+        <p class="form-error" style="display:none;"></p>
+        <button type="submit" class="btn-primary" style="width:100%;">Send it over</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Quote Modal -->
+  <div class="modal-overlay" id="modal-quote" role="dialog" aria-modal="true" aria-labelledby="modal-quote-heading">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <line x1="15" y1="5" x2="5" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="5" y1="5" x2="15" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div id="success-quote" class="form-success">
+        <p>Your selections have been sent. We will be in touch with a tailored quote shortly.</p>
+      </div>
+      <form id="form-quote" novalidate>
+        <h2 class="modal-heading" id="modal-quote-heading">Almost there.</h2>
+        <p class="modal-subtext">Drop your details below and we will come back with a bespoke quote based on what you have selected.</p>
+        <input type="hidden" id="selected-services-input" name="selectedServices">
+        <div class="form-group">
+          <label for="quote-name">Full name</label>
+          <input type="text" id="quote-name" name="fullName" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="quote-email">Email address</label>
+          <input type="email" id="quote-email" name="email" required placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label for="quote-business">Business name</label>
+          <input type="text" id="quote-business" name="businessName" required placeholder="Your business">
+        </div>
+        <div class="form-group">
+          <label for="quote-industry">Industry</label>
+          <select id="quote-industry" name="industry" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option>Food and Beverage</option>
+            <option>Retail</option>
+            <option>Professional Services</option>
+            <option>Health and Wellness</option>
+            <option>Technology</option>
+            <option>Hospitality</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quote-notes">Anything you'd like us to know?</label>
+          <textarea id="quote-notes" name="notes" placeholder="Tell us about your goals, challenges, or anything else on your mind..."></textarea>
+        </div>
+        <div class="form-consent">
+          <input type="checkbox" id="quote-consent" name="policyAcknowledged" value="yes" required>
+          <label for="quote-consent">I have read the <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a>.</label>
+        </div>
+        <p class="form-error" style="display:none;"></p>
+        <button type="submit" class="btn-primary" style="width:100%;">Send it over</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="mascot.js"></script>
+</body>
+</html>

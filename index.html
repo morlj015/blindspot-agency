@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blindspot - Digital Marketing Agency</title>
+  <meta name="description" content="Blindspot is a boutique marketing agency that identifies what is holding your brand back and builds the strategy to fix it.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mascot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Blindspot home">
+      <span class="brand-logo-stack" aria-hidden="true">
+        <img src="logo-dark.svg" alt="" class="brand-logo-image logo-dark">
+        <img src="logo-light.svg" alt="" class="brand-logo-image logo-light">
+      </span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="work.html" class="nav-link">Our Work</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" aria-label="Toggle theme"></button>
+      <button class="btn-book" data-modal="book">Book a Call</button>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-overlay"></div>
+  <div class="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <button class="mobile-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="work.html" class="nav-link">Our Work</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+    </ul>
+    <button class="btn-primary mobile-book-btn" data-modal="book">Book a Call</button>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <svg class="hero-bg-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="85" cy="85" r="70" stroke="currentColor" stroke-width="8" fill="none"/>
+      <circle cx="85" cy="85" r="20" fill="currentColor" opacity="0.5"/>
+      <line x1="138" y1="138" x2="190" y2="190" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+    </svg>
+    <div class="hero-content">
+      <h1 class="hero-headline fade-up">
+        Every business has a blindspot.<br>
+        We fix <span class="gold">yours.</span>
+      </h1>
+      <p class="hero-subtext fade-up" data-delay="1">Blindspot is a specialist marketing agency that identifies what is holding your brand back and builds the strategy to fix it.</p>
+      <div class="hero-ctas fade-up" data-delay="2">
+        <a href="work.html" class="btn-outline">See Our Work</a>
+        <button class="btn-primary" data-modal="book">Book a Call</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="what-we-do">
+    <div class="wwd-grid">
+      <div class="wwd-item fade-up">
+        <div class="wwd-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="24" cy="24" r="20"/>
+            <circle cx="24" cy="24" r="12"/>
+            <circle cx="24" cy="24" r="4" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <h3 class="wwd-label">Find the gap</h3>
+        <p class="wwd-text">We audit what's holding you back before we touch a single asset.</p>
+      </div>
+      <div class="wwd-item fade-up" data-delay="1">
+        <div class="wwd-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <rect x="6" y="8" width="36" height="28" rx="3"/>
+            <line x1="13" y1="18" x2="35" y2="18"/>
+            <line x1="13" y1="24" x2="28" y2="24"/>
+          </svg>
+        </div>
+        <h3 class="wwd-label">Build the presence</h3>
+        <p class="wwd-text">Content that actually earns attention on the platforms your audience lives on.</p>
+      </div>
+      <div class="wwd-item fade-up" data-delay="2">
+        <div class="wwd-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="6,38 16,26 24,32 38,14"/>
+            <polyline points="30,14 38,14 38,22"/>
+          </svg>
+        </div>
+        <h3 class="wwd-label">Grow the business</h3>
+        <p class="wwd-text">Paid and organic systems that compound. Visibility that turns into revenue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Blindspot -->
+  <section class="section why-section">
+    <h2 class="section-heading fade-up">Why Blindspot?</h2>
+    <div class="why-grid">
+      <div class="pull-quote fade-up" data-delay="1">
+        "We work with brands we genuinely believe in. That is the only way this works."
+      </div>
+      <div class="why-text fade-up" data-delay="2">
+        <p>Every client relationship is direct, personal, and built to last. You will always have access to the people doing the work.</p>
+        <p>We use AI-powered tools to work faster and smarter for you, but the thinking, the strategy, and the accountability stay with us. Always.</p>
+        <p>When a brand grows with us, we feel it. When results fall short, we take ownership. That is the kind of agency Blindspot was built to be.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Numbers Bar -->
+  <section class="numbers-bar">
+    <div class="numbers-grid">
+      <div class="fade-up">
+        <span class="stat-number" data-target="9" data-suffix="+">9+</span>
+        <span class="stat-label">Brands Scaled</span>
+      </div>
+      <div class="fade-up" data-delay="1">
+        <span class="stat-number" data-target="3" data-suffix="M+">3M+</span>
+        <span class="stat-label">Organic Views Generated Across Client Content</span>
+      </div>
+      <div class="fade-up" data-delay="2">
+        <span class="stat-number" data-target="100" data-suffix="%">100%</span>
+        <span class="stat-label">Client Retention Rate Since Launch</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials-section">
+    <h2 class="section-heading fade-up">Don't just take our word for it:</h2>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">Working with Blindspot has transformed our business. They've elevated our social media with innovative reels, engaging posts, and smart strategies that have boosted visibility and enquiries. Their before-and-after content showcases our work perfectly, and they've consistently been creative, responsive, and easy to work with. We're lucky to have found them and highly recommend their services.</p>
+        <div class="testimonial-author">
+          <p class="testimonial-name">Arthur Edward</p>
+          <p class="testimonial-title">CEO, E.V.A Design &amp; Build</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up" data-delay="1">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">Blindspot completely transformed how we show up online. Within weeks we had a real strategy, content that actually connected with our audience, and results we could point to. The team genuinely cares about what they're building for you — it shows in everything they do.</p>
+        <div class="testimonial-author">
+          <p class="testimonial-name">Rob</p>
+          <p class="testimonial-title">Client</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up" data-delay="2">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">Testimonial coming soon.</p>
+        <div class="testimonial-author">
+          <p class="testimonial-name">Michael</p>
+          <p class="testimonial-title">Client</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <section class="footer-cta">
+    <h2 class="fade-up" style="font-family:Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.5rem;">Ready to fix your blindspot?</h2>
+    <button class="btn-primary fade-up" data-delay="1" data-modal="book">Book a Call</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo footer-logo" aria-label="Blindspot home">
+          <span class="brand-logo-stack" aria-hidden="true">
+            <img src="logo-dark.svg" alt="" class="brand-logo-image logo-dark">
+            <img src="logo-light.svg" alt="" class="brand-logo-image logo-light">
+          </span>
+        </a>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:hello@blindspot.agency" class="footer-email">hello@blindspot.agency</a>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/theblindspotagency" target="_blank" rel="noopener noreferrer" aria-label="Blindspot on Instagram" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/blindspotagency" target="_blank" rel="noopener noreferrer" aria-label="Blindspot on LinkedIn" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="3"/>
+              <line x1="8" y1="10" x2="8" y2="17"/>
+              <line x1="12" y1="13" x2="12" y2="17"/>
+              <line x1="12" y1="10" x2="12" y2="10.5"/>
+              <line x1="16" y1="8" x2="16" y2="17"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61580712877141" target="_blank" rel="noopener noreferrer" aria-label="Blindspot on Facebook" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Blindspot. All rights reserved.</span>
+      <div class="footer-meta-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Book a Call Modal -->
+  <div class="modal-overlay" id="modal-book" role="dialog" aria-modal="true" aria-labelledby="modal-book-heading">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <line x1="15" y1="5" x2="5" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="5" y1="5" x2="15" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div id="success-book" class="form-success">
+        <p>We have got your details. Expect to hear from us soon.</p>
+      </div>
+      <form id="form-book" novalidate>
+        <h2 class="modal-heading" id="modal-book-heading">Let's talk.</h2>
+        <p class="modal-subtext">Tell us a little about yourself and we will be in touch to arrange a call.</p>
+        <div class="form-group">
+          <label for="book-name">Full name</label>
+          <input type="text" id="book-name" name="fullName" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="book-email">Email address</label>
+          <input type="email" id="book-email" name="email" required placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label for="book-business">Business name</label>
+          <input type="text" id="book-business" name="businessName" required placeholder="Your business">
+        </div>
+        <div class="form-group">
+          <label for="book-industry">Industry</label>
+          <select id="book-industry" name="industry" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option>Food and Beverage</option>
+            <option>Retail</option>
+            <option>Professional Services</option>
+            <option>Health and Wellness</option>
+            <option>Technology</option>
+            <option>Hospitality</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="book-services">Selected services</label>
+          <select id="book-services" name="selectedServices">
+            <option value="" selected>No specific service yet</option>
+            <option>Instagram Management</option>
+            <option>LinkedIn Management</option>
+            <option>TikTok Management</option>
+            <option>Facebook Management</option>
+            <option>Pinterest Management</option>
+            <option>Short-Form Video Production</option>
+            <option>Long Form Video Production</option>
+            <option>Static Graphic Design</option>
+            <option>UGC Campaign Coordination</option>
+            <option>Caption Copywriting</option>
+            <option>Google SEO</option>
+            <option>AI Search Optimisation</option>
+            <option>Google Business Profile Management</option>
+            <option>Blog Content Writing</option>
+            <option>Website Audit and Recommendations</option>
+            <option>Website Development</option>
+            <option>Meta Ads Management</option>
+            <option>Ad Creative Production</option>
+            <option>Monthly Performance Report</option>
+            <option>Bi-weekly Strategy Call</option>
+            <option>Weekly Strategy Call</option>
+            <option>Competitor Analysis</option>
+            <option>Brand Audit</option>
+            <option>Reddit Growth Strategy</option>
+            <option>Pinterest Growth Strategy</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="book-notes">Anything you'd like us to know?</label>
+          <textarea id="book-notes" name="notes" placeholder="Tell us about your goals, challenges, or anything else on your mind..."></textarea>
+        </div>
+        <div class="form-consent">
+          <input type="checkbox" id="book-consent" name="policyAcknowledged" value="yes" required>
+          <label for="book-consent">I have read the <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a>.</label>
+        </div>
+        <p class="form-error" style="display:none;"></p>
+        <button type="submit" class="btn-primary" style="width:100%;">Send it over</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="mascot.js"></script>
+</body>
+</html>

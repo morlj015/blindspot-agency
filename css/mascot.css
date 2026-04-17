@@ -1,0 +1,364 @@
+/* =============================================
+   Blindspot Mascot + Enhanced Animations
+   ============================================= */
+
+/* --- Scroll Progress Bar --- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a84c, #e8c86a, #c9a84c);
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 0.08s linear;
+  transform-origin: left center;
+}
+
+/* --- Mascot Wrapper --- */
+#mascot-wrapper {
+  position: fixed;
+  bottom: 16px;
+  left: 4%;
+  width: 88px;
+  height: 148px;
+  pointer-events: none;
+  z-index: 500;
+  will-change: left, bottom, transform;
+}
+
+#blindspot-mascot {
+  width: 88px;
+  height: 148px;
+  display: block;
+  overflow: visible;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+/* Tooltip bubble that pops up occasionally */
+#mascot-bubble {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-30%);
+  background: var(--accent);
+  color: #2c2c2a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  letter-spacing: 0.03em;
+}
+
+#mascot-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  border: 5px solid transparent;
+  border-top-color: var(--accent);
+}
+
+#mascot-bubble.visible {
+  opacity: 1;
+}
+
+/* --- Mascot Gold Particle Trail --- */
+.mascot-particle {
+  position: fixed;
+  border-radius: 50%;
+  background: #c9a84c;
+  pointer-events: none;
+  z-index: 499;
+  animation: particleFade 0.7s ease forwards;
+}
+
+@keyframes particleFade {
+  0%   { opacity: 0.8; transform: scale(1) translateY(0); }
+  40%  { opacity: 0.5; transform: scale(0.8) translateY(-8px); }
+  100% { opacity: 0;   transform: scale(0.2) translateY(-18px); }
+}
+
+.mascot-skid-dust {
+  position: fixed;
+  border-radius: 999px;
+  background: #c9a84c;
+  pointer-events: none;
+  z-index: 498;
+  opacity: 0.75;
+  transform-origin: center bottom;
+  filter: blur(0.3px);
+  animation: skidDust 0.58s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes skidDust {
+  0%   { opacity: 0.78; transform: translate(0, 0) scale(0.7) rotate(0deg); }
+  30%  { opacity: 0.68; transform: translate(calc(var(--dust-x) * 0.45), calc(var(--dust-y) * 0.55)) scale(1) rotate(8deg); }
+  100% { opacity: 0; transform: translate(var(--dust-x), var(--dust-y)) scale(0.3) rotate(14deg); }
+}
+
+/* =============================================
+   Enhanced Scroll Animations
+   ============================================= */
+
+/* Base - elements start invisible */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delay utilities */
+[data-delay="0"] { transition-delay: 0s; }
+[data-delay="1"] { transition-delay: 0.12s; }
+[data-delay="2"] { transition-delay: 0.24s; }
+[data-delay="3"] { transition-delay: 0.36s; }
+[data-delay="4"] { transition-delay: 0.48s; }
+
+/* =============================================
+   Heading Underline Reveal
+   ============================================= */
+
+.section-heading,
+.page-hero-heading {
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading::after,
+.page-hero-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 2px;
+}
+
+.section-heading.underline-reveal::after,
+.page-hero-heading.underline-reveal::after {
+  width: 100%;
+}
+
+/* =============================================
+   Number Counter Highlight
+   ============================================= */
+
+.stat-number {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.stat-number.counting {
+  transform: scale(1.05);
+}
+
+/* =============================================
+   Card 3D Tilt on Hover
+   ============================================= */
+
+.tilt-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* =============================================
+   Navbar Scroll State
+   ============================================= */
+
+.navbar {
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(54, 54, 50, 0.97);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+}
+
+html.light .navbar.scrolled {
+  background: rgba(217, 208, 184, 0.97);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================
+   Hero Parallax BG
+   ============================================= */
+
+.hero-bg-icon {
+  will-change: transform;
+}
+
+/* =============================================
+   Gold Shimmer on Accent Text
+   ============================================= */
+
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold {
+  background: linear-gradient(
+    90deg,
+    #c9a84c 0%,
+    #e8c86a 30%,
+    #f5d97a 50%,
+    #e8c86a 70%,
+    #c9a84c 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--accent);
+  animation: goldShimmer 4s linear infinite;
+}
+
+/* =============================================
+   Section Entrance - Stagger Grid Children
+   ============================================= */
+
+.wwd-grid .wwd-item:nth-child(1),
+.numbers-grid > div:nth-child(1),
+.pricing-grid .pricing-card:nth-child(1),
+.team-grid .team-card:nth-child(1),
+.values-grid .value-card:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.wwd-grid .wwd-item:nth-child(2),
+.numbers-grid > div:nth-child(2),
+.pricing-grid .pricing-card:nth-child(2),
+.team-grid .team-card:nth-child(2),
+.values-grid .value-card:nth-child(2) {
+  transition-delay: 0.14s;
+}
+
+.wwd-grid .wwd-item:nth-child(3),
+.numbers-grid > div:nth-child(3),
+.pricing-grid .pricing-card:nth-child(3),
+.team-grid .team-card:nth-child(3),
+.values-grid .value-card:nth-child(3) {
+  transition-delay: 0.28s;
+}
+
+/* =============================================
+   Button Ripple Effect
+   ============================================= */
+
+.btn-primary,
+.btn-outline,
+.btn-gold-outline,
+.btn-book {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(0);
+  animation: rippleAnim 0.55s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* =============================================
+   Reduced Motion
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  #mascot-wrapper { display: none !important; }
+  #scroll-progress { display: none !important; }
+  .mascot-particle { display: none !important; }
+
+  .fade-up,
+  .fade-left,
+  .fade-right,
+  .scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .gold {
+    animation: none;
+  }
+
+  .section-heading::after,
+  .page-hero-heading::after {
+    transition: none;
+    width: 100%;
+  }
+}
+
+/* =============================================
+   Mobile - hide mascot on very small screens
+   ============================================= */
+
+@media (max-width: 480px) {
+  #mascot-wrapper {
+    width: 60px;
+    height: 100px;
+  }
+  #blindspot-mascot {
+    width: 60px;
+    height: 100px;
+  }
+}

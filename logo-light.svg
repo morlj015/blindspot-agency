@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 150" fill="none">
+  <text x="8" y="108" fill="#2c2c2a" font-family="Georgia, 'Times New Roman', serif" font-size="102" letter-spacing="2">BLINDSP</text>
+  <text x="576" y="108" fill="#2c2c2a" font-family="Georgia, 'Times New Roman', serif" font-size="102" letter-spacing="2">T</text>
+  <circle cx="518" cy="75" r="40" stroke="#2c2c2a" stroke-width="10"/>
+  <circle cx="518" cy="75" r="9" fill="#2c2c2a"/>
+  <line x1="548" y1="105" x2="587" y2="144" stroke="#2c2c2a" stroke-width="10" stroke-linecap="round"/>
+</svg>
