@@ -187,7 +187,7 @@ async function submitForm(formEl, successMsg, modalId) {
     if (successEl) successEl.style.display = 'block';
   } catch (err) {
     if (errorEl) {
-      errorEl.textContent = 'Something went wrong. Please email us directly at harry@blindspot.agency.';
+      errorEl.textContent = 'Something went wrong. Please try again or reach out via the contact form.';
       errorEl.style.display = 'block';
     }
     submitBtn.textContent = originalText;

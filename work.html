@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Work - Blindspot</title>
   <meta name="description" content="A selection of brands Blindspot has worked with and what we built together. Real results, real clients.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="mascot.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -21,8 +22,8 @@
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="Blindspot home">
       <span class="brand-logo-stack" aria-hidden="true">
-        <img src="logo-dark.svg" alt="" class="brand-logo-image logo-dark">
-        <img src="logo-light.svg" alt="" class="brand-logo-image logo-light">
+        <img src="uploads/logo-dark.svg" alt="" class="brand-logo-image logo-dark">
+        <img src="uploads/logo-light.svg" alt="" class="brand-logo-image logo-light">
       </span>
     </a>
     <ul class="nav-links" role="list">
@@ -62,16 +63,10 @@
     <button class="btn-primary mobile-book-btn" data-modal="book">Book a Call</button>
   </div>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="page-hero-content">
-      <h1 class="page-hero-heading fade-up">Work that moves the needle.</h1>
-      <p class="page-hero-subtext fade-up" data-delay="1">A selection of brands we have worked with and what we built together.</p>
-    </div>
-  </section>
-
   <!-- Work Grid -->
-  <section class="section">
+  <section class="section" style="padding-top:120px;">
+    <h1 class="page-hero-heading fade-up" style="margin-bottom:0.5rem;">Work that moves the needle.</h1>
+    <p class="page-hero-subtext fade-up" style="margin-bottom:2.5rem;" data-delay="1">A selection of brands we have worked with and what we built together.</p>
     <div class="work-grid">
 
       <!-- Card 1: E.V.A Design & Build -->
@@ -156,14 +151,14 @@
     </div>
 
     <div style="text-align:center;margin-top:4rem;">
-      <p style="font-family:Georgia,serif;font-size:1.5rem;margin-bottom:1.5rem;" class="fade-up">Think we could do this for you?</p>
+      <p style="font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;margin-bottom:1.5rem;" class="fade-up">Think we could do this for you?</p>
       <button class="btn-primary fade-up" data-delay="1" data-modal="book">Book a Call</button>
     </div>
   </section>
 
   <!-- Footer CTA -->
   <section class="footer-cta">
-    <h2 class="fade-up" style="font-family:Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.5rem;">Ready to fix your blindspot?</h2>
+    <h2 class="fade-up" style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.5rem;">Ready to fix your blindspot?</h2>
     <button class="btn-primary fade-up" data-delay="1" data-modal="book">Book a Call</button>
   </section>
 
@@ -173,8 +168,8 @@
       <div class="footer-brand">
         <a href="index.html" class="nav-logo footer-logo" aria-label="Blindspot home">
           <span class="brand-logo-stack" aria-hidden="true">
-            <img src="logo-dark.svg" alt="" class="brand-logo-image logo-dark">
-            <img src="logo-light.svg" alt="" class="brand-logo-image logo-light">
+            <img src="uploads/logo-dark.svg" alt="" class="brand-logo-image logo-dark">
+            <img src="uploads/logo-light.svg" alt="" class="brand-logo-image logo-light">
           </span>
         </a>
       </div>
@@ -187,7 +182,7 @@
         </ul>
       </nav>
       <div class="footer-contact">
-        <a href="mailto:hello@blindspot.agency" class="footer-email">hello@blindspot.agency</a>
+        <button class="footer-email" data-modal="book">Get in touch</button>
         <div class="footer-social">
           <a href="https://www.instagram.com/theblindspotagency" target="_blank" rel="noopener noreferrer" aria-label="Blindspot on Instagram" class="social-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -312,6 +307,24 @@
         <p class="form-error" style="display:none;"></p>
         <button type="submit" class="btn-primary" style="width:100%;">Send it over</button>
       </form>
+    </div>
+  </div>
+
+  <!-- Case Study Modal -->
+  <div class="modal-overlay" id="modal-case" role="dialog" aria-modal="true" aria-labelledby="modal-case-heading">
+    <div class="modal-box modal-case-box">
+      <button class="modal-close modal-case-close" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <line x1="15" y1="5" x2="5" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="5" y1="5" x2="15" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="case-modal-header" id="modal-case-header"></div>
+      <div class="case-modal-body">
+        <p class="case-tag" id="modal-case-tag"></p>
+        <h2 class="case-modal-heading" id="modal-case-heading"></h2>
+        <div id="modal-case-content"></div>
+      </div>
     </div>
   </div>
 

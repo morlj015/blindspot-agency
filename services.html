@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services - Blindspot</title>
   <meta name="description" content="Explore Blindspot's service packages. From starter social management to full-scale growth retainers, or build your own bespoke package.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="mascot.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -21,8 +22,8 @@
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="Blindspot home">
       <span class="brand-logo-stack" aria-hidden="true">
-        <img src="logo-dark.svg" alt="" class="brand-logo-image logo-dark">
-        <img src="logo-light.svg" alt="" class="brand-logo-image logo-light">
+        <img src="uploads/logo-dark.svg" alt="" class="brand-logo-image logo-dark">
+        <img src="uploads/logo-light.svg" alt="" class="brand-logo-image logo-light">
       </span>
     </a>
     <ul class="nav-links" role="list">
@@ -62,16 +63,80 @@
     <button class="btn-primary mobile-book-btn" data-modal="book">Book a Call</button>
   </div>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="page-hero-content">
-      <h1 class="page-hero-heading fade-up">What we offer.</h1>
-      <p class="page-hero-subtext fade-up" data-delay="1">Whether you are just starting out or ready to scale, there is a Blindspot package built for where you are right now.</p>
+  <!-- Packages Section -->
+  <section class="section" style="padding-top:120px;">
+    <h1 class="page-hero-heading fade-up" style="margin-bottom:1.25rem;">Our packages.</h1>
+    <p class="page-hero-subtext fade-up" style="margin-bottom:2.5rem;" data-delay="1">Whether you are just starting out or ready to scale, there is a Blindspot package built for where you are right now.</p>
+    <div class="pricing-grid">
+
+      <!-- Foundation -->
+      <div class="pricing-card fade-up">
+        <h3 class="pricing-tier">Foundation</h3>
+        <p class="pricing-best-for">For businesses getting started with social media and looking to build a consistent, professional presence.</p>
+        <ul class="pricing-features">
+          <li>3 static posts per week (1 platform)</li>
+          <li>Content calendar and scheduling</li>
+          <li>Caption copywriting</li>
+          <li>Monthly strategy check-in</li>
+          <li>Monthly analytics report</li>
+          <li>Email support</li>
+        </ul>
+        <button class="btn-outline" data-modal="book">Get started</button>
+      </div>
+
+      <!-- Growth - Featured -->
+      <div class="pricing-card featured fade-up" data-delay="1">
+        <span class="pricing-badge">Most Popular</span>
+        <h3 class="pricing-tier">Growth</h3>
+        <p class="pricing-best-for">For growing brands ready to scale their reach and start seeing real, measurable results.</p>
+        <ul class="pricing-features">
+          <li>20 pieces of content per month across 2 platforms</li>
+          <li>Short-form video content</li>
+          <li>Full caption and hashtag strategy</li>
+          <li>SEO and LLM visibility</li>
+          <li>Community management and engagement</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Monthly analytics report</li>
+          <li>Priority email support</li>
+        </ul>
+        <button class="btn-primary" data-modal="book">Get started</button>
+      </div>
+
+      <!-- Scale -->
+      <div class="pricing-card fade-up" data-delay="2">
+        <h3 class="pricing-tier">Scale</h3>
+        <p class="pricing-best-for">For ambitious businesses that want a full-service marketing partner driving growth across every channel.</p>
+        <ul class="pricing-features">
+          <li>30+ pieces of content across 3 platforms</li>
+          <li>Full content production suite</li>
+          <li>UGC campaign strategy</li>
+          <li>Meta ad strategy and management</li>
+          <li>SEO and LLM visibility</li>
+          <li>Weekly strategy sessions</li>
+          <li>Comprehensive monthly reporting with competitor analysis</li>
+          <li>Priority direct access to the founding team</li>
+        </ul>
+        <button class="btn-outline" data-modal="book">Get started</button>
+      </div>
+
+      <!-- Build Your Own -->
+      <div class="pricing-card fade-up" data-delay="3">
+        <h3 class="pricing-tier">Build Your Own</h3>
+        <p class="pricing-best-for">Want something tailored to exactly what you need? Pick from our full suite of services and we will put together a bespoke quote.</p>
+        <ul class="pricing-features">
+          <li>Choose any combination of services</li>
+          <li>Fully bespoke to your goals</li>
+          <li>Custom pricing based on your selection</li>
+        </ul>
+        <a href="#builder-section" class="btn-outline" style="text-decoration:none;">Build your package</a>
+      </div>
+
     </div>
+    <p class="pricing-note fade-up">Still unsure? Book a call with us now and we will build the right package together.</p>
   </section>
 
   <!-- Build Your Own Section -->
-  <section class="section builder-section">
+  <section class="section builder-section" id="builder-section">
     <div style="max-width:900px;margin:0 auto;">
       <h2 class="section-heading fade-up">Build your own package.</h2>
       <p class="section-subtext fade-up" data-delay="1">Build your own package — drag the services you want into your package and we will put together a bespoke quote.</p>
@@ -176,68 +241,9 @@
     </div>
   </section>
 
-  <!-- Packages Section -->
-  <section class="section">
-    <h2 class="section-heading fade-up" style="text-align:center;margin-bottom:3rem;">Our packages.</h2>
-    <div class="pricing-grid">
-
-      <!-- Foundation -->
-      <div class="pricing-card fade-up">
-        <h3 class="pricing-tier">Foundation</h3>
-        <p class="pricing-best-for">For businesses getting started with social media and looking to build a consistent, professional presence.</p>
-        <ul class="pricing-features">
-          <li>3 static posts per week (1 platform)</li>
-          <li>Content calendar and scheduling</li>
-          <li>Caption copywriting</li>
-          <li>Monthly strategy check-in</li>
-          <li>Monthly analytics report</li>
-          <li>Email support</li>
-        </ul>
-        <button class="btn-outline" data-modal="book">Get started</button>
-      </div>
-
-      <!-- Growth - Featured -->
-      <div class="pricing-card featured fade-up" data-delay="1">
-        <span class="pricing-badge">Most Popular</span>
-        <h3 class="pricing-tier">Growth</h3>
-        <p class="pricing-best-for">For growing brands ready to scale their reach and start seeing real, measurable results.</p>
-        <ul class="pricing-features">
-          <li>20 pieces of content per month across 2 platforms</li>
-          <li>Short-form video content</li>
-          <li>Full caption and hashtag strategy</li>
-          <li>SEO and LLM visibility</li>
-          <li>Community management and engagement</li>
-          <li>Bi-weekly strategy calls</li>
-          <li>Monthly analytics report</li>
-          <li>Priority email support</li>
-        </ul>
-        <button class="btn-primary" data-modal="book">Get started</button>
-      </div>
-
-      <!-- Scale -->
-      <div class="pricing-card fade-up" data-delay="2">
-        <h3 class="pricing-tier">Scale</h3>
-        <p class="pricing-best-for">For ambitious businesses that want a full-service marketing partner driving growth across every channel.</p>
-        <ul class="pricing-features">
-          <li>30+ pieces of content across 3 platforms</li>
-          <li>Full content production suite</li>
-          <li>UGC campaign strategy</li>
-          <li>Meta ad strategy and management</li>
-          <li>SEO and LLM visibility</li>
-          <li>Weekly strategy sessions</li>
-          <li>Comprehensive monthly reporting with competitor analysis</li>
-          <li>Priority direct access to the founding team</li>
-        </ul>
-        <button class="btn-outline" data-modal="book">Get started</button>
-      </div>
-
-    </div>
-    <p class="pricing-note fade-up">Still unsure? Book a call with us now and we will build the right package together.</p>
-  </section>
-
   <!-- Footer CTA -->
   <section class="footer-cta">
-    <h2 class="fade-up" style="font-family:Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.5rem;">Ready to fix your blindspot?</h2>
+    <h2 class="fade-up" style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.5rem;">Ready to fix your blindspot?</h2>
     <button class="btn-primary fade-up" data-delay="1" data-modal="book">Book a Call</button>
   </section>
 
@@ -247,8 +253,8 @@
       <div class="footer-brand">
         <a href="index.html" class="nav-logo footer-logo" aria-label="Blindspot home">
           <span class="brand-logo-stack" aria-hidden="true">
-            <img src="logo-dark.svg" alt="" class="brand-logo-image logo-dark">
-            <img src="logo-light.svg" alt="" class="brand-logo-image logo-light">
+            <img src="uploads/logo-dark.svg" alt="" class="brand-logo-image logo-dark">
+            <img src="uploads/logo-light.svg" alt="" class="brand-logo-image logo-light">
           </span>
         </a>
       </div>
@@ -261,7 +267,7 @@
         </ul>
       </nav>
       <div class="footer-contact">
-        <a href="mailto:hello@blindspot.agency" class="footer-email">hello@blindspot.agency</a>
+        <button class="footer-email" data-modal="book">Get in touch</button>
         <div class="footer-social">
           <a href="https://www.instagram.com/theblindspotagency" target="_blank" rel="noopener noreferrer" aria-label="Blindspot on Instagram" class="social-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">

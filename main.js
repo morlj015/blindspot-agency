@@ -205,7 +205,7 @@ async function submitForm(formEl, successMsg, modalId) {
     if (successEl) successEl.style.display = 'block';
   } catch (err) {
     if (errorEl) {
-      errorEl.textContent = 'Something went wrong. Please email us directly at hello@blindspot.agency.';
+      errorEl.textContent = 'Something went wrong. Please try again or reach out via the contact form.';
       errorEl.style.display = 'block';
     }
     submitBtn.textContent = originalText;
@@ -575,10 +575,22 @@ function initCaseStudies() {
   document.querySelectorAll('.case-read-more').forEach(btn => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.case-card');
-      const expanded = card.querySelector('.case-expanded');
-      if (!expanded) return;
-      const isOpen = expanded.classList.toggle('open');
-      btn.textContent = isOpen ? 'Read less' : 'Read more';
+      const tag = card.querySelector('.case-tag')?.textContent || '';
+      const brand = card.querySelector('.case-brand')?.textContent || '';
+      const headerStyle = card.querySelector('.case-card-image')?.getAttribute('style') || '';
+      const contentHTML = card.querySelector('.case-expanded')?.innerHTML || '';
+
+      const tagEl = document.getElementById('modal-case-tag');
+      const headingEl = document.getElementById('modal-case-heading');
+      const headerEl = document.getElementById('modal-case-header');
+      const contentEl = document.getElementById('modal-case-content');
+
+      if (tagEl) tagEl.textContent = tag;
+      if (headingEl) headingEl.textContent = brand;
+      if (headerEl) headerEl.setAttribute('style', headerStyle);
+      if (contentEl) contentEl.innerHTML = contentHTML;
+
+      openModal('modal-case');
     });
   });
 }
