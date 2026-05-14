@@ -51,6 +51,22 @@ body {
   cursor: none;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+html.light body::before {
+  opacity: 0.2;
+}
+
 /* =============================================
    Custom Cursor
    ============================================= */
@@ -1759,10 +1775,130 @@ html.light .cookie-notice {
    Work Page Grid
    ============================================= */
 
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+/* =============================================
+   Case Study Slider
+   ============================================= */
+
+.case-slider-outer {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+  margin: 0 -1rem;
+}
+
+.case-slider-wrap {
+  overflow: visible;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.case-slider-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.case-slider-slide {
+  flex-shrink: 0;
+  width: min(360px, 80vw);
+  transform: scale(0.84);
+  transform-origin: center top;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.case-slider-slide.is-active {
+  transform: scale(1);
+}
+
+.case-slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.75rem;
+}
+
+.case-slider-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.case-slider-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.08);
+}
+
+/* Card face redesign */
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card-image {
+  position: relative;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.case-card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 4px 11px;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.case-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.case-face-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.case-face-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.case-face-stat-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
+  font-weight: normal;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.case-face-stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  line-height: 1.35;
+  max-width: 110px;
 }
 
 /* =============================================
@@ -2091,7 +2227,17 @@ html.light .cookie-notice {
 .modal-case-box {
   max-width: 700px;
   padding: 0;
-  overflow: hidden;
+  max-height: none;
+  overflow: visible;
+}
+
+#modal-case {
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 2rem 1rem;
 }
 
 .modal-case-close {
@@ -2150,6 +2296,144 @@ html.light .cookie-notice {
 
 .case-modal-body .case-testimonial {
   margin-top: 1.75rem;
+}
+
+/* =============================================
+   Follower Counter Widget
+   ============================================= */
+
+.follower-counter {
+  background: linear-gradient(135deg, rgba(254, 44, 85, 0.07) 0%, rgba(37, 244, 238, 0.04) 100%);
+  border: 1px solid rgba(254, 44, 85, 0.18);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem 1.4rem;
+  margin: 1.75rem 0;
+}
+
+.follower-counter-head {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+  margin-bottom: 1.1rem;
+}
+
+.follower-tiktok-icon {
+  width: 14px;
+  height: 14px;
+  color: #fe2c55;
+  flex-shrink: 0;
+}
+
+.follower-counter-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.follower-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.follower-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-weight: normal;
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+.follower-col--live .follower-num {
+  color: var(--text);
+}
+
+.follower-col-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.follower-live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #fe2c55;
+  border-radius: 50%;
+  animation: follower-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes follower-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.65); }
+}
+
+.follower-arrow {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(254, 44, 85, 0.45);
+  min-width: 0;
+}
+
+/* =============================================
+   Stats Grid Widget
+   ============================================= */
+
+.stats-grid {
+  background: linear-gradient(135deg, rgba(254, 44, 85, 0.07) 0%, rgba(37, 244, 238, 0.04) 100%);
+  border: 1px solid rgba(254, 44, 85, 0.18);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem 1.4rem;
+  margin: 1rem 0 1.75rem;
+}
+
+.stats-grid-head {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.stats-grid-cells {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.stat-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  font-weight: normal;
+  line-height: 1;
+  color: var(--text);
+}
+
+.stat-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
 }
 
 /* =============================================

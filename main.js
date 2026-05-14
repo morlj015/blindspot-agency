@@ -568,6 +568,119 @@ function initServiceBuilder() {
 }
 
 // =============================================
+// Follower Counter Animation
+// =============================================
+
+async function animateFollowerCounter(container) {
+  const start    = parseInt(container.dataset.start, 10)    || 0;
+  const fallback = parseInt(container.dataset.fallback, 10) || start;
+  const src      = container.dataset.src;
+  const numEl    = container.querySelector('.follower-count-num');
+  if (!numEl) return;
+
+  let end = fallback;
+
+  if (src) {
+    try {
+      const res = await fetch(src + '?v=' + Date.now());
+      if (res.ok) {
+        const data = await res.json();
+        if (data.followers) end = data.followers;
+      }
+    } catch (_) {}
+  }
+
+  const duration  = 2200;
+  const startTime = performance.now();
+  const easeOut   = t => 1 - Math.pow(1 - t, 3);
+
+  function tick(now) {
+    const t       = Math.min((now - startTime) / duration, 1);
+    const current = Math.round(start + (end - start) * easeOut(t));
+    numEl.textContent = current.toLocaleString('en-GB');
+    if (t < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
+
+// =============================================
+// Stats Grid Animation
+// =============================================
+
+function animateStatsGrid(grid) {
+  const cells   = grid.querySelectorAll('.stat-num[data-target]');
+  if (!cells.length) return;
+
+  const duration  = 2200;
+  const startTime = performance.now();
+  const easeOut   = t => 1 - Math.pow(1 - t, 3);
+
+  function tick(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    cells.forEach(cell => {
+      const target = parseFloat(cell.dataset.target);
+      const suffix = cell.dataset.suffix || '';
+      const val    = Math.round(target * easeOut(t));
+      cell.textContent = val.toLocaleString('en-GB') + suffix;
+    });
+    if (t < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
+
+// =============================================
+// Case Study Slider
+// =============================================
+
+function initCaseSlider() {
+  const wrap   = document.querySelector('.case-slider-wrap');
+  const track  = document.querySelector('.case-slider-track');
+  if (!track || !wrap) return;
+
+  const slides  = Array.from(track.querySelectorAll('.case-slider-slide'));
+  const btnPrev = document.querySelector('.case-slider-btn--prev');
+  const btnNext = document.querySelector('.case-slider-btn--next');
+  let current   = 0;
+
+  function centreOffset(index) {
+    const gap        = parseFloat(getComputedStyle(track).gap) || 24;
+    const slideW     = slides[0].offsetWidth;
+    const wrapW      = wrap.offsetWidth;
+    return Math.round(wrapW / 2 - (index * (slideW + gap)) - slideW / 2);
+  }
+
+  function go(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+    track.style.transform = `translateX(${centreOffset(current)}px)`;
+  }
+
+  function goNoTransition(index) {
+    track.style.transition = 'none';
+    go(index);
+    requestAnimationFrame(() => { track.style.transition = ''; });
+  }
+
+  btnPrev?.addEventListener('click', () => go(current - 1));
+  btnNext?.addEventListener('click', () => go(current + 1));
+
+  // Touch swipe
+  let touchStartX = 0;
+  wrap.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  wrap.addEventListener('touchend', e => {
+    const delta = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 50) go(delta > 0 ? current + 1 : current - 1);
+  });
+
+  window.addEventListener('resize', () => goNoTransition(current));
+
+  // Initial position (after layout paint)
+  requestAnimationFrame(() => goNoTransition(current));
+}
+
+// =============================================
 // Case Study Expand
 // =============================================
 
@@ -575,7 +688,7 @@ function initCaseStudies() {
   document.querySelectorAll('.case-read-more').forEach(btn => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.case-card');
-      const tag = card.querySelector('.case-tag')?.textContent || '';
+      const tag = card.querySelector('.case-card-tag')?.textContent || card.querySelector('.case-tag')?.textContent || '';
       const brand = card.querySelector('.case-brand')?.textContent || '';
       const headerStyle = card.querySelector('.case-card-image')?.getAttribute('style') || '';
       const contentHTML = card.querySelector('.case-expanded')?.innerHTML || '';
@@ -588,7 +701,13 @@ function initCaseStudies() {
       if (tagEl) tagEl.textContent = tag;
       if (headingEl) headingEl.textContent = brand;
       if (headerEl) headerEl.setAttribute('style', headerStyle);
-      if (contentEl) contentEl.innerHTML = contentHTML;
+      if (contentEl) {
+        contentEl.innerHTML = contentHTML;
+        const counter   = contentEl.querySelector('.follower-counter');
+        if (counter) animateFollowerCounter(counter);
+        const statsGrid = contentEl.querySelector('.stats-grid');
+        if (statsGrid) animateStatsGrid(statsGrid);
+      }
 
       openModal('modal-case');
     });
@@ -641,6 +760,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initScrollAnimations();
   initCaseStudies();
+  initCaseSlider();
   initServiceBuilder();
   initCookieNotice();
   setActiveNav();
