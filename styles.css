@@ -1870,6 +1870,7 @@ html.light .cookie-notice {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1.5rem;
 }
 
 .case-face-stats {

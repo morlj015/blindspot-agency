@@ -688,6 +688,7 @@ function initCaseStudies() {
   document.querySelectorAll('.case-read-more').forEach(btn => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.case-card');
+      if (!card) return;
       const tag = card.querySelector('.case-card-tag')?.textContent || card.querySelector('.case-tag')?.textContent || '';
       const brand = card.querySelector('.case-brand')?.textContent || '';
       const headerStyle = card.querySelector('.case-card-image')?.getAttribute('style') || '';
