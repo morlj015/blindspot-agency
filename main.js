@@ -631,6 +631,157 @@ function animateStatsGrid(grid) {
 }
 
 // =============================================
+// Dynamic Content Rendering (Decap CMS)
+// =============================================
+
+function escapeHtml(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function buildFollowerCounterHTML(cs) {
+  if (cs.followerStart == null) return '';
+  const isLive = !!cs.followerSrc;
+  const attrs = [`data-start="${cs.followerStart}"`];
+  if (cs.followerFallback != null) attrs.push(`data-fallback="${cs.followerFallback}"`);
+  if (cs.followerSrc) attrs.push(`data-src="${escapeHtml(cs.followerSrc)}"`);
+
+  return `
+            <div class="follower-counter" ${attrs.join(' ')}>
+              <div class="follower-counter-head">
+                <svg class="follower-tiktok-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.84 1.55V6.79a4.85 4.85 0 0 1-1.07-.1z"/>
+                </svg>
+                TikTok Follower Growth
+              </div>
+              <div class="follower-counter-body">
+                <div class="follower-col">
+                  <span class="follower-num">${cs.followerStart}</span>
+                  <span class="follower-col-label">Before Blindspot</span>
+                </div>
+                <div class="follower-arrow" aria-hidden="true">
+                  <svg width="48" height="16" viewBox="0 0 48 16" fill="none">
+                    <line x1="0" y1="8" x2="38" y2="8" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+                    <polyline points="32,3 40,8 32,13" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="follower-col follower-col--live">
+                  <span class="follower-num follower-count-num">${cs.followerStart}</span>
+                  <span class="follower-col-label">
+                    ${isLive ? '<span class="follower-live-dot" aria-hidden="true"></span>Live' : 'All time'}
+                  </span>
+                </div>
+              </div>
+            </div>`;
+}
+
+function buildKeyMetricsHTML(cs) {
+  if (!cs.keyMetrics || !cs.keyMetrics.length) return '';
+  const heading = cs.keyMetricsHeading ? escapeHtml(cs.keyMetricsHeading) : '';
+  const cells = cs.keyMetrics.slice(0, 4).map(m => `
+                <div class="stat-cell">
+                  <span class="stat-num" data-target="${m.value}" data-suffix="${escapeHtml(m.suffix || '')}">0${escapeHtml(m.suffix || '')}</span>
+                  <span class="stat-label">${escapeHtml(m.label)}</span>
+                </div>`).join('');
+
+  return `
+            <div class="stats-grid">
+              ${heading ? `<div class="stats-grid-head">${heading}</div>` : ''}
+              <div class="stats-grid-cells">${cells}
+              </div>
+            </div>`;
+}
+
+function buildCaseTestimonialHTML(cs) {
+  if (!cs.testimonialQuote) return '';
+  return `
+            <blockquote class="case-testimonial">
+              <p>"${escapeHtml(cs.testimonialQuote)}"</p>
+              <cite>${escapeHtml(cs.testimonialCite || '')}</cite>
+            </blockquote>`;
+}
+
+function buildCaseSlideHTML(cs, index) {
+  return `
+          <div class="case-slider-slide${index === 0 ? ' is-active' : ''}">
+          <article class="case-card">
+            <div class="case-card-image" style="background: linear-gradient(135deg, ${escapeHtml(cs.gradientStart)} 0%, ${escapeHtml(cs.gradientEnd)} 100%);">
+              <span class="case-card-tag">${escapeHtml(cs.tag)}</span>
+            </div>
+            <div class="case-card-body">
+              <h3 class="case-brand">${escapeHtml(cs.brand)}</h3>
+              <div class="case-face-stats">
+                <div class="case-face-stat">
+                  <span class="case-face-stat-value">${escapeHtml(cs.stat1Value)}</span>
+                  <span class="case-face-stat-label">${escapeHtml(cs.stat1Label)}</span>
+                </div>
+                <div class="case-face-stat">
+                  <span class="case-face-stat-value">${escapeHtml(cs.stat2Value)}</span>
+                  <span class="case-face-stat-label">${escapeHtml(cs.stat2Label)}</span>
+                </div>
+              </div>
+              <button class="case-read-more">Read case study</button>
+              <div class="case-expanded">
+            <div class="case-detail-section">
+              <h4>The Challenge</h4>
+              <p>${escapeHtml(cs.challenge)}</p>
+            </div>
+            <div class="case-detail-section">
+              <h4>What We Did</h4>
+              <p>${escapeHtml(cs.whatWeDid)}</p>
+            </div>
+            <div class="case-detail-section">
+              <h4>The Results</h4>
+              <p>${escapeHtml(cs.results)}</p>
+            </div>${buildFollowerCounterHTML(cs)}${buildKeyMetricsHTML(cs)}${buildCaseTestimonialHTML(cs)}
+              </div>
+            </div>
+          </article>
+          </div>`;
+}
+
+async function renderCaseStudies() {
+  const track = document.querySelector('.case-slider-track');
+  if (!track) return;
+  try {
+    const res = await fetch('data/case-studies.json?v=' + Date.now());
+    if (!res.ok) return;
+    const data = await res.json();
+    const caseStudies = data.items || [];
+    track.innerHTML = caseStudies.map(buildCaseSlideHTML).join('');
+  } catch (_) {}
+}
+
+function buildTestimonialCardHTML(t, index) {
+  return `
+      <div class="testimonial-card fade-up"${index > 0 ? ` data-delay="${index}"` : ''}>
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">${escapeHtml(t.quote)}</p>
+        <div class="testimonial-author">
+          <p class="testimonial-name">${escapeHtml(t.name)}</p>
+          <p class="testimonial-title">${escapeHtml(t.title)}</p>
+        </div>
+      </div>`;
+}
+
+async function renderTestimonials() {
+  const grid = document.querySelector('.testimonials-grid');
+  if (!grid) return;
+  try {
+    const res = await fetch('data/testimonials.json?v=' + Date.now());
+    if (!res.ok) return;
+    const data = await res.json();
+    const testimonials = data.items || [];
+    grid.innerHTML = testimonials.map(buildTestimonialCardHTML).join('');
+  } catch (_) {}
+}
+
+// =============================================
 // Case Study Slider
 // =============================================
 
@@ -756,9 +907,10 @@ function setActiveNav() {
 // DOMContentLoaded Init
 // =============================================
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   initTheme();
   initMobileNav();
+  await Promise.all([renderCaseStudies(), renderTestimonials()]);
   initScrollAnimations();
   initCaseStudies();
   initCaseSlider();

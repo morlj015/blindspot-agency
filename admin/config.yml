@@ -1,0 +1,64 @@
+backend:
+  name: github
+  repo: blindspot-agency/blindspot-agency
+  branch: main
+  base_url: https://blindspot-cms-auth.blindspot-agency.workers.dev
+
+media_folder: "uploads"
+public_folder: "uploads"
+
+collections:
+  - name: "case_studies"
+    label: "Case Studies"
+    files:
+      - file: "data/case-studies.json"
+        label: "Case Studies"
+        name: "case_studies"
+        fields:
+          - label: "Case Studies"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.brand}}"
+            fields:
+              - { label: "Client / Brand Name", name: "brand", widget: "string" }
+              - { label: "Industry Tag", name: "tag", widget: "string", hint: "Shown as a small label on the card, e.g. 'Construction & Trades'" }
+              - { label: "Card Gradient - Start Colour", name: "gradientStart", widget: "color" }
+              - { label: "Card Gradient - End Colour", name: "gradientEnd", widget: "color" }
+              - { label: "Headline Stat 1 - Value", name: "stat1Value", widget: "string", hint: "e.g. '15×' or '£14K+'" }
+              - { label: "Headline Stat 1 - Label", name: "stat1Label", widget: "string" }
+              - { label: "Headline Stat 2 - Value", name: "stat2Value", widget: "string" }
+              - { label: "Headline Stat 2 - Label", name: "stat2Label", widget: "string" }
+              - { label: "The Challenge", name: "challenge", widget: "text" }
+              - { label: "What We Did", name: "whatWeDid", widget: "text" }
+              - { label: "The Results", name: "results", widget: "text" }
+              - { label: "Client Testimonial Quote", name: "testimonialQuote", widget: "text", required: false, hint: "Optional - shown at the bottom of the expanded case study" }
+              - { label: "Testimonial Attribution", name: "testimonialCite", widget: "string", required: false, hint: "e.g. 'Arthur Edward, CEO'" }
+              - { label: "Advanced: Live Follower Counter - Starting Count", name: "followerStart", widget: "number", required: false, hint: "Leave blank unless this case study should show a before/after follower counter widget" }
+              - { label: "Advanced: Live Follower Counter - Fallback Count", name: "followerFallback", widget: "number", required: false }
+              - { label: "Advanced: Live Follower Counter - Live Data Source", name: "followerSrc", widget: "string", required: false, hint: "Leave blank unless a developer has wired this case study to a live stats feed" }
+              - { label: "Advanced: Key Metrics Heading", name: "keyMetricsHeading", widget: "string", required: false, hint: "e.g. 'Key metrics · Dec 2024 – Mar 2025'" }
+              - label: "Advanced: Key Metrics (up to 4)"
+                name: "keyMetrics"
+                widget: "list"
+                required: false
+                max: 4
+                fields:
+                  - { label: "Value", name: "value", widget: "number" }
+                  - { label: "Suffix", name: "suffix", widget: "string", required: false, hint: "e.g. 'K' or '%'" }
+                  - { label: "Label", name: "label", widget: "string" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - file: "data/testimonials.json"
+        label: "Testimonials"
+        name: "testimonials"
+        fields:
+          - label: "Testimonials"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title / Company", name: "title", widget: "string" }
