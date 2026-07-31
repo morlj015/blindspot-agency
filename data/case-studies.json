@@ -1,59 +1,89 @@
 {
   "items": [
-  {
-    "brand": "E.V.A Design & Build Specialists",
-    "tag": "Construction & Trades",
-    "gradientStart": "#4a5568",
-    "gradientEnd": "#2d3748",
-    "stat1Value": "15×",
-    "stat1Label": "Monthly Enquiry Growth",
-    "stat2Value": "£14K+",
-    "stat2Label": "Leads in 6 Months",
-    "challenge": "E.V.A Design & Build had a strong reputation locally and delivered high-quality work, but their online presence didn't reflect it. They had no consistent content strategy, low engagement across platforms, and were generating almost all enquiries through word of mouth. This meant unpredictable lead flow and missed opportunities from homeowners actively searching for services like kitchen renovations and bespoke carpentry.",
-    "whatWeDid": "Built and executed a cross-platform content strategy across TikTok, Instagram, and Facebook. Produced 3 short-form videos per week focused on high-performing formats including before and after transformations, customer reactions, and trust-building content. Positioned the brand around key trust drivers such as 5 star reviews, decades of experience, and repeat clients. Optimised content for reach using platform-native hooks, trending formats, and targeted hashtags. Created a consistent posting system to ensure ongoing visibility and compounding growth across all channels.",
-    "results": "Grew TikTok from 160 to 1,900 followers. Scaled Instagram from 60 to 317 followers. Increased Facebook from 40 to 116 followers. Generated £14,000 in project enquiries within 6 months. Increased monthly enquiry value from £1,000 to £15,000 — a 15x uplift. Achieved a 204% increase in reach within the first month of consistent posting.",
-    "followerStart": 194,
-    "followerFallback": 1954,
-    "followerSrc": "/data/eva-stats.json",
-    "testimonialQuote": "Working with Blindspot has transformed our business. They've elevated our social media with innovative reels, engaging posts, and smart strategies that have boosted visibility and enquiries. Their before-and-after content showcases our work perfectly, and they've consistently been creative, responsive, and easy to work with. We're lucky to have found them and highly recommend their services.",
-    "testimonialCite": "Arthur Edward, CEO"
-  },
-  {
-    "brand": "Travel and Lifestyle Creator",
-    "tag": "Creator & Lifestyle",
-    "gradientStart": "#2b6cb0",
-    "gradientEnd": "#1a365d",
-    "stat1Value": "795K",
-    "stat1Label": "TikTok Post Views",
-    "stat2Value": "2,391%",
-    "stat2Label": "Follower Growth",
-    "challenge": "The creator had a presence across TikTok, Instagram, and YouTube but no consistent content strategy and no system for growth. Follower counts were low, content was inconsistent, and there was no framework for identifying what formats actually drove reach and engagement at scale.",
-    "whatWeDid": "Built a 90-day cross-platform content strategy combining daily short-form content with weekly long-form video. Identified and tested viral hook formats, visual hooks, and CTAs to find the highest-performing content styles. Scaled production of the winning formats once identified, posting one short-form video per day and one long-form video per week. Executed a cross-platform growth strategy across TikTok, Instagram, and YouTube simultaneously.",
-    "results": "Grew from 800 to 6,800 followers in 3 months. Generated over 2 million views across all platforms. Achieved an 8,678% increase in engagement. 2,391% following increase on TikTok. Unlocked the YouTube Creator Programme with 6,042 hours of watch time and 2,000 subscribers gained. 90 days from starting the strategy to measurable, compounding growth across every platform.",
-    "followerStart": 800,
-    "followerFallback": 6812,
-    "keyMetricsHeading": "Key metrics · Dec 2024 – Mar 2025",
-    "keyMetrics": [
-      { "value": 795, "suffix": "K", "label": "Post Views" },
-      { "value": 90, "suffix": "K", "label": "Likes" },
-      { "value": 8403, "suffix": "", "label": "Shares" },
-      { "value": 2391, "suffix": "%", "label": "Follower Growth" }
-    ]
-  },
-  {
-    "brand": "The Flower Shoppe",
-    "tag": "Technology & Apps",
-    "gradientStart": "#6b46c1",
-    "gradientEnd": "#44337a",
-    "stat1Value": "168K",
-    "stat1Label": "Views, Single Video",
-    "stat2Value": "310K",
-    "stat2Label": "Monthly Pinterest Impressions",
-    "challenge": "The Flower Shoppe had developed multiple consumer apps including a family events finder and a wellness and crystal app, but had no consistent strategy for driving awareness, downloads, or retention across any of them. Each product was launching into the market with no audience, no content playbook, and no distribution system.",
-    "whatWeDid": "Built and executed individual marketing strategies for each app tailored to the platform and audience most likely to convert. For CityCub, developed a short-form video content strategy on TikTok, testing multiple formats to identify the highest-performing approach before scaling production to 20 videos per week. For Crystal Ritual, built a Pinterest marketing strategy targeting wellness and spirituality audiences, creating content designed to drive consistent monthly traffic through to the app and generate downloads and upsells.",
-    "results": "168,000 views generated from a single TikTok video for CityCub. Multiple videos consistently achieving 4-figure view counts. 310,000 monthly Pinterest impressions generated for Crystal Ritual. Consistent click-through traffic from Pinterest driving app downloads and in-app upsells. 20 videos per week scaled at peak TikTok production. Ongoing app marketing partnership across multiple products.",
-    "testimonialQuote": "Harry is an essential part of our consumer mobile app development team. He's pioneered creative growth strategies across Pinterest, TikTok, and Reddit, among other platforms. The resulting metrics don't lie!",
-    "testimonialCite": "Jasmine, Founder"
-  }
+    {
+      "followerFallback": 1954,
+      "challenge": "E.V.A Design & Build had a strong reputation locally and delivered high-quality work, but their online presence didn't reflect it. They had no consistent content strategy, low engagement across platforms, and were generating almost all enquiries through word of mouth. This meant unpredictable lead flow and missed opportunities from homeowners actively searching for services like kitchen renovations and bespoke carpentry.",
+      "followerStart": 194,
+      "followerSrc": "/data/eva-stats.json",
+      "brand": "E.V.A Design & Build Specialists",
+      "gradientEnd": "#2d3748",
+      "whatWeDid": "Built and executed a cross-platform content strategy across TikTok, Instagram, and Facebook. Produced 3 short-form videos per week focused on high-performing formats including before and after transformations, customer reactions, and trust-building content. Positioned the brand around key trust drivers such as 5 star reviews, decades of experience, and repeat clients. Optimised content for reach using platform-native hooks, trending formats, and targeted hashtags. Created a consistent posting system to ensure ongoing visibility and compounding growth across all channels.",
+      "gradientStart": "#4a5568",
+      "stat2Value": "£14K+",
+      "stat1Value": "15×",
+      "stat2Label": "Leads in 6 Months",
+      "testimonialCite": "Arthur Edward, CEO",
+      "results": "Grew TikTok from 160 to 1,900 followers. Scaled Instagram from 60 to 317 followers. Increased Facebook from 40 to 116 followers. Generated £14,000 in project enquiries within 6 months. Increased monthly enquiry value from £1,000 to £15,000 — a 15x uplift. Achieved a 204% increase in reach within the first month of consistent posting.",
+      "stat1Label": "Monthly Enquiry Growth",
+      "tag": "Construction & Trades",
+      "testimonialQuote": "Working with Blindspot has transformed our business. They've elevated our social media with innovative reels, engaging posts, and smart strategies that have boosted visibility and enquiries. Their before-and-after content showcases our work perfectly, and they've consistently been creative, responsive, and easy to work with. We're lucky to have found them and highly recommend their services."
+    },
+    {
+      "followerFallback": 6812,
+      "challenge": "The creator had a presence across TikTok, Instagram, and YouTube but no consistent content strategy and no system for growth. Follower counts were low, content was inconsistent, and there was no framework for identifying what formats actually drove reach and engagement at scale.",
+      "keyMetrics": [
+        {
+          "value": 795,
+          "suffix": "K",
+          "label": "Post Views"
+        },
+        {
+          "value": 90,
+          "suffix": "K",
+          "label": "Likes"
+        },
+        {
+          "value": 8403,
+          "suffix": "",
+          "label": "Shares"
+        },
+        {
+          "value": 2391,
+          "suffix": "%",
+          "label": "Follower Growth"
+        }
+      ],
+      "followerStart": 800,
+      "brand": "Travel and Lifestyle Creator",
+      "gradientEnd": "#1a365d",
+      "whatWeDid": "Built a 90-day cross-platform content strategy combining daily short-form content with weekly long-form video. Identified and tested viral hook formats, visual hooks, and CTAs to find the highest-performing content styles. Scaled production of the winning formats once identified, posting one short-form video per day and one long-form video per week. Executed a cross-platform growth strategy across TikTok, Instagram, and YouTube simultaneously.",
+      "gradientStart": "#2b6cb0",
+      "stat2Value": "2,391%",
+      "stat1Value": "795K",
+      "stat2Label": "Follower Growth",
+      "results": "Grew from 800 to 6,800 followers in 3 months. Generated over 2 million views across all platforms. Achieved an 8,678% increase in engagement. 2,391% following increase on TikTok. Unlocked the YouTube Creator Programme with 6,042 hours of watch time and 2,000 subscribers gained. 90 days from starting the strategy to measurable, compounding growth across every platform.",
+      "stat1Label": "TikTok Post Views",
+      "tag": "Creator & Lifestyle",
+      "keyMetricsHeading": "Key metrics · Dec 2024 – Mar 2025"
+    },
+    {
+      "challenge": "The Flower Shoppe had developed multiple consumer apps including a family events finder and a wellness and crystal app, but had no consistent strategy for driving awareness, downloads, or retention across any of them. Each product was launching into the market with no audience, no content playbook, and no distribution system.",
+      "brand": "The Flower Shoppe",
+      "gradientEnd": "#44337a",
+      "whatWeDid": "Built and executed individual marketing strategies for each app tailored to the platform and audience most likely to convert. For CityCub, developed a short-form video content strategy on TikTok, testing multiple formats to identify the highest-performing approach before scaling production to 20 videos per week. For Crystal Ritual, built a Pinterest marketing strategy targeting wellness and spirituality audiences, creating content designed to drive consistent monthly traffic through to the app and generate downloads and upsells.",
+      "gradientStart": "#6b46c1",
+      "stat2Value": "310K",
+      "stat1Value": "168K",
+      "stat2Label": "Monthly Pinterest Impressions",
+      "testimonialCite": "Jasmine, Founder",
+      "results": "168,000 views generated from a single TikTok video for CityCub. Multiple videos consistently achieving 4-figure view counts. 310,000 monthly Pinterest impressions generated for Crystal Ritual. Consistent click-through traffic from Pinterest driving app downloads and in-app upsells. 20 videos per week scaled at peak TikTok production. Ongoing app marketing partnership across multiple products.",
+      "stat1Label": "Views, Single Video",
+      "tag": "Technology & Apps",
+      "testimonialQuote": "Harry is an essential part of our consumer mobile app development team. He's pioneered creative growth strategies across Pinterest, TikTok, and Reddit, among other platforms. The resulting metrics don't lie!"
+    },
+    {
+      "challenge": "The challenge was to...The challenge was to...The challenge was to...The challenge was to...",
+      "brand": "Test Case Study",
+      "gradientEnd": "#710606",
+      "whatWeDid": "We did this We did thisWe did thisWe did thisWe did thisWe did thisWe did this",
+      "gradientStart": "#f20000",
+      "stat2Value": "10",
+      "stat1Value": "15x",
+      "stat2Label": "What the sigmas",
+      "results": "Results. Results. Results. Results. Results. Results. Results. Results. Results. Results. Results. Results. Results. Results. Results. ",
+      "stat1Label": "Legend Status",
+      "tag": "Construction",
+      "testimonialQuote": "Harry did great things for me"
+    }
   ]
 }
